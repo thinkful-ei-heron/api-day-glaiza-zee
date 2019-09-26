@@ -1,13 +1,13 @@
-import item from './item.js';
+import item from './item';
 
 const items = [];
 let hideCheckeditems = false;
 
-const findById = function (id) {
+const findById = function(id) {
   return this.items.find(currentItem => currentItem.id === id);
 };
 
-const addItem = function (name) {
+const addItem = function(name) {
   try {
     item.validateName(name);
     this.items.push(item.create(name));
@@ -16,12 +16,12 @@ const addItem = function (name) {
   }
 };
 
-const findAndToggleChecked = function (id) {
+const findAndToggleChecked = function(id) {
   const currentItem = this.findById(id);
   currentItem.checked = !currentItem.checked;
 };
 
-const findAndUpdateName = function (id, name) {
+const findAndUpdateName = function(id, name) {
   try {
     item.validateName(name);
     const currentItem = this.findById(id);
@@ -31,11 +31,11 @@ const findAndUpdateName = function (id, name) {
   }
 };
 
-const findAndDelete = function (id) {
+const findAndDelete = function(id) {
   this.items = this.items.filter(currentItem => currentItem.id !== id);
 };
 
-const toggleCheckedFilter = function () {
+const toggleCheckedFilter = function() {
   this.hideCheckedItems = !this.hideCheckedItems;
 };
 
