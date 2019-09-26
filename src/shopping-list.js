@@ -1,4 +1,4 @@
-import store from '../scripts/store';
+import store from './store';
 // import item from './item';
 import $ from 'jquery';
 
